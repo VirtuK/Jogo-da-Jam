@@ -32,11 +32,10 @@ public class anvil : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (anvilSelector.active)
-            {
-                anvilSelector.SetActive(false);
-                anvilActive = false;
-            }
+            
+            anvilSelector.SetActive(false);
+            anvilActive = false;
+            
             anvilClick = false;
         }
     }
@@ -51,64 +50,72 @@ public class anvil : MonoBehaviour
     
     public void build(string tool)
     {
-        switch(tool)
+        if (uv.tools.Count == 0)
         {
-            case "sword":
-               if(uv.hotOreCounter >= 2)
-                {
-                    uv.hotOreCounter -= 2;
-                    GameObject g = Instantiate(toolsImagePrefab, new Vector3(toolsCounter.transform.position.x + pos, toolsCounter.transform.position.y, 0), Quaternion.identity, toolsCounter.transform);
-                    g.AddComponent<Image>();
-                    g.GetComponent<Image>().sprite = tools[0];
-                    pos += 70;
-                    uv.tools.Add(g);
-                }
-                break;
-            case "pickaxe":
-                if (uv.hotOreCounter >= 3)
-                {
-                    uv.hotOreCounter -= 3;
-                    GameObject g = Instantiate(toolsImagePrefab, new Vector3(toolsCounter.transform.position.x + pos, toolsCounter.transform.position.y, 0), Quaternion.identity, toolsCounter.transform);
-                    g.AddComponent<Image>();
-                    g.GetComponent<Image>().sprite = tools[1];
-                    pos += 70;
-                    uv.tools.Add(g);
-                }
-                break;
-            case "axe":
-                if (uv.hotOreCounter >= 3)
-                {
-                    uv.hotOreCounter -= 3;
-                    GameObject g = Instantiate(toolsImagePrefab, new Vector3(toolsCounter.transform.position.x + pos, toolsCounter.transform.position.y, 0), Quaternion.identity, toolsCounter.transform);
-                    g.AddComponent<Image>();
-                    g.GetComponent<Image>().sprite = tools[2];
-                    pos += 70;
-                    uv.tools.Add(g);
-                }
-                break;
-            case "shovel":
-                if (uv.hotOreCounter >= 1)
-                {
-                    uv.hotOreCounter -= 1;
-                    GameObject g = Instantiate(toolsImagePrefab, new Vector3(toolsCounter.transform.position.x + pos, toolsCounter.transform.position.y, 0), Quaternion.identity, toolsCounter.transform);
-                    g.AddComponent<Image>();
-                    g.GetComponent<Image>().sprite = tools[3];
-                    pos += 70;
-                    uv.tools.Add(g);
-                }
-                break;
-            case "hoe":
-                if (uv.hotOreCounter >= 2)
-                {
-                    uv.hotOreCounter -= 2;
-                    GameObject g = Instantiate(toolsImagePrefab, new Vector3(toolsCounter.transform.position.x + pos, toolsCounter.transform.position.y, 0), Quaternion.identity, toolsCounter.transform);
-                    g.AddComponent<Image>();
-                    g.GetComponent<Image>().sprite = tools[4];
-                    pos += 70;
-                    uv.tools.Add(g);
-                }
-                break;
+            switch (tool)
+            {
+                case "sword":
+                    if (uv.hotOreCounter >= 2)
+                    {
+                        uv.hotOreCounter -= 2;
+                        uv.icon = Instantiate(toolsImagePrefab, new Vector3(toolsCounter.transform.position.x + pos, toolsCounter.transform.position.y, 0), Quaternion.identity, toolsCounter.transform);
+                        uv.icon.AddComponent<Image>();
+                        uv.icon.GetComponent<Image>().sprite = tools[0];
+                        pos += 70;
+                        uv.tools.Add(uv.icon);
+                        uv.iconList.Add(uv.icon);
+                    }
+                    break;
+                case "pickaxe":
+                    if (uv.hotOreCounter >= 3)
+                    {
+                        uv.hotOreCounter -= 3;
+                        uv.icon = Instantiate(toolsImagePrefab, new Vector3(toolsCounter.transform.position.x + pos, toolsCounter.transform.position.y, 0), Quaternion.identity, toolsCounter.transform);
+                        uv.icon.AddComponent<Image>();
+                        uv.icon.GetComponent<Image>().sprite = tools[1];
+                        pos += 70;
+                        uv.tools.Add(uv.icon);
+                        uv.iconList.Add(uv.icon);
+                    }
+                    break;
+                case "axe":
+                    if (uv.hotOreCounter >= 3)
+                    {
+                        uv.hotOreCounter -= 3;
+                        uv.icon = Instantiate(toolsImagePrefab, new Vector3(toolsCounter.transform.position.x + pos, toolsCounter.transform.position.y, 0), Quaternion.identity, toolsCounter.transform);
+                        uv.icon.AddComponent<Image>();
+                        uv.icon.GetComponent<Image>().sprite = tools[2];
+                        pos += 70;
+                        uv.tools.Add(uv.icon);
+                        uv.iconList.Add(uv.icon);
+                    }
+                    break;
+                case "shovel":
+                    if (uv.hotOreCounter >= 1)
+                    {
+                        uv.hotOreCounter -= 1;
+                        uv.icon = Instantiate(toolsImagePrefab, new Vector3(toolsCounter.transform.position.x + pos, toolsCounter.transform.position.y, 0), Quaternion.identity, toolsCounter.transform);
+                        uv.icon.AddComponent<Image>();
+                        uv.icon.GetComponent<Image>().sprite = tools[3];
+                        pos += 70;
+                        uv.iconList.Add(uv.icon);
+                        uv.tools.Add(uv.icon);
+                    }
+                    break;
+                case "hoe":
+                    if (uv.hotOreCounter >= 2)
+                    {
+                        uv.hotOreCounter -= 2;
+                        uv.icon = Instantiate(toolsImagePrefab, new Vector3(toolsCounter.transform.position.x + pos, toolsCounter.transform.position.y, 0), Quaternion.identity, toolsCounter.transform);
+                        uv.icon.AddComponent<Image>();
+                        uv.icon.GetComponent<Image>().sprite = tools[4];
+                        pos += 70;
+                        uv.iconList.Add(uv.icon);
+                        uv.tools.Add(uv.icon);
+                    }
+                    break;
+            }
+            anvilSelector.gameObject.SetActive(false);
         }
-        anvilSelector.gameObject.SetActive(false);
     }
 }

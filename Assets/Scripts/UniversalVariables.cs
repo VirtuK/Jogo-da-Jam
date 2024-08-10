@@ -9,10 +9,13 @@ public class UniversalVariables : MonoBehaviour
     public int oreCounter;
     public int hotOreCounter;
     public List<GameObject> tools;
+    public int finishedtools;
+    public GameObject icon;
+    public List<GameObject> iconList;
 
     private void Update()
     {
-        if(tools.Count == 5)
+        if(finishedtools == 5)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
         }
