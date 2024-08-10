@@ -8,12 +8,14 @@ public class clickAction : MonoBehaviour
     public Forge forge;
     public OreCollector collector;
     public anvil anvil;
+    public Desk desk;
 
     private void Start()
     {
         forge = FindFirstObjectByType<Forge>();
         collector = FindFirstObjectByType<OreCollector>();
         anvil = FindFirstObjectByType<anvil>();
+        desk= FindFirstObjectByType<Desk>();
     }
     public void click()
     {
@@ -28,6 +30,10 @@ public class clickAction : MonoBehaviour
         if (anvil.anvilClick)
         {
             anvil.click();
+        }
+        if (desk.deskActive)
+        {
+            desk.click();
         }
     }
 }

@@ -31,4 +31,9 @@ public class PlayerMovement : MonoBehaviour
             speed = 0;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        speed = 0;
+    }
 }
