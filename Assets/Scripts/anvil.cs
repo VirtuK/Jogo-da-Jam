@@ -11,7 +11,8 @@ public class anvil : MonoBehaviour
     public GameObject toolsImagePrefab;
     public UniversalVariables uv;
     public bool anvilClick;
-
+    public InteractIcon ic;
+    public Image anvilIM;
 
     public List<Sprite> tools;
     int pos = 70;
@@ -22,7 +23,8 @@ public class anvil : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             anvilClick = true;
-            
+            ic.sprite = anvilIM;
+
         }
     }
 

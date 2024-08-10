@@ -16,6 +16,8 @@ public class OreCollector : MonoBehaviour
     bool timer_active;
     public UniversalVariables uv;
     public bool oreActive;
+    public InteractIcon ic;
+    public Image oreIM;
     // Update is called once per frame
     void Update()
     {
@@ -35,6 +37,7 @@ public class OreCollector : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             oreActive = true;
+            ic.sprite = oreIM;
             
         }
     }

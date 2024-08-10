@@ -19,6 +19,8 @@ public class Forge : MonoBehaviour
     float timer_time = 0;
     public TMP_Text timer;
     public bool forge;
+    public InteractIcon ic;
+    public Image forgeIM;
     // Start is called before the first frame update
 
 
@@ -40,6 +42,7 @@ public class Forge : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             forge = true;
+            ic.sprite = forgeIM;
         }
         
     }
