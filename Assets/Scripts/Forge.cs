@@ -8,6 +8,9 @@ public class Forge : MonoBehaviour
     public GameObject boxPrefab;
     public GameObject player;
     GameObject g;
+    public GameObject forgeSelector;
+
+    public bool forgeActive;
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,6 +28,32 @@ public class Forge : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Destroy(g);
+            if (forgeSelector.active)
+            {
+                forgeSelector.SetActive(false);
+                forgeActive = false;
+            }
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (!forgeActive)
+            {
+                forgeSelector.SetActive(true);
+                forgeActive = true;
+               
+            }
+            else
+            {
+                forgeSelector.SetActive(false);
+                forgeActive = false;
+            }
+        }
+    }
+
+    
+
 }

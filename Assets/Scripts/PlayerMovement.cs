@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Reporting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     bool movement;
-    public float speed = 10f;
+    public float speed;
     Vector2 lastPosition;
     float position;
     void Update()
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
         {
             lastPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             movement = true;
+            speed = 5;
 
         }
 
@@ -26,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             movement = false;
+            speed = 0;
         }
     }
 }
