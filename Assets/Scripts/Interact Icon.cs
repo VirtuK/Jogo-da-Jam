@@ -17,7 +17,7 @@ public class InteractIcon : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            g = Instantiate(boxPrefab, new Vector2(interaction.transform.position.x - 400, interaction.transform.position.y), Quaternion.identity);
+            g = Instantiate(boxPrefab, new Vector2(interaction.transform.position.x - 370, interaction.transform.position.y + 200), Quaternion.identity);
            g.transform.SetParent(interaction.transform, false);
             g.transform.localScale = new Vector3(150, 150, 0);
             g.GetComponent<Button>().image.sprite = sprite;
