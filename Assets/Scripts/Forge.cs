@@ -23,7 +23,10 @@ public class Forge : MonoBehaviour
     public Image forgeIM;
     // Start is called before the first frame update
 
-
+    private void Start()
+    {
+        ic = this.gameObject.GetComponent<InteractIcon>();
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")

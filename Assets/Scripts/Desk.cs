@@ -16,6 +16,10 @@ public class Desk : MonoBehaviour
     public InteractIcon ic;
     public Image deskIM;
     // Start is called before the first frame update
+    private void Start()
+    {
+        ic = this.gameObject.GetComponent<InteractIcon>();
+    }
     public void click()
     {
         if (!desk)

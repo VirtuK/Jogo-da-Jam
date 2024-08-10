@@ -16,7 +16,11 @@ public class anvil : MonoBehaviour
 
     public List<Sprite> tools;
     int pos = 70;
-    
+
+    private void Start()
+    {
+        ic = this.gameObject.GetComponent<InteractIcon>();
+    }
     // Start is called before the first frame update
     private void OnTriggerStay2D(Collider2D collision)
     {

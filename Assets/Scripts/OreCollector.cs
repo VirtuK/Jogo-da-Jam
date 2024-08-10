@@ -19,6 +19,11 @@ public class OreCollector : MonoBehaviour
     public InteractIcon ic;
     public Image oreIM;
     // Update is called once per frame
+
+    private void Start()
+    {
+        ic = this.gameObject.GetComponent<InteractIcon>();
+    }
     void Update()
     {
         countTxt.text = ": " + uv.oreCounter;
