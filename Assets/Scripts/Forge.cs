@@ -20,7 +20,7 @@ public class Forge : MonoBehaviour
     public TMP_Text timer;
     public bool forge;
     public InteractIcon ic;
-    public Image forgeIM;
+    public Sprite forgeIM;
     // Start is called before the first frame update
 
     private void Start()

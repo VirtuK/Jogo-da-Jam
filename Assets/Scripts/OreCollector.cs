@@ -17,7 +17,7 @@ public class OreCollector : MonoBehaviour
     public UniversalVariables uv;
     public bool oreActive;
     public InteractIcon ic;
-    public Image oreIM;
+    public Sprite oreIM;
     // Update is called once per frame
 
     private void Start()

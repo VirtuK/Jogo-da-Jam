@@ -12,7 +12,7 @@ public class anvil : MonoBehaviour
     public UniversalVariables uv;
     public bool anvilClick;
     public InteractIcon ic;
-    public Image anvilIM;
+    public Sprite anvilIM;
 
     public List<Sprite> tools;
     int pos = 70;

@@ -14,7 +14,7 @@ public class Desk : MonoBehaviour
     private GameObject i;
     public List<Sprite> sprites = new List<Sprite>();
     public InteractIcon ic;
-    public Image deskIM;
+    public Sprite deskIM;
     // Start is called before the first frame update
     private void Start()
     {
