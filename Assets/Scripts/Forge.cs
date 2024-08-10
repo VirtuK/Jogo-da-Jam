@@ -35,19 +35,21 @@ public class Forge : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-          if (Input.anyKeyDown)
-          {
+        if (collision.gameObject.tag == "Player")
+        {
+            if (Input.anyKeyDown)
+            {
 
                 if (!forgeActive)
                 {
-                 
+
                     forgeSelector.SetActive(true);
                     forgeActive = true;
                     if (oreSprites.Count > 0)
                     {
                         selectorSlots[0].image.sprite = oreSprites[0].sprite;
                     }
-                    
+
 
                 }
                 else
@@ -55,7 +57,8 @@ public class Forge : MonoBehaviour
                     forgeSelector.SetActive(false);
                     forgeActive = false;
                 }
-          }
+            }
+        }
         
     }
 

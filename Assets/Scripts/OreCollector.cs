@@ -30,17 +30,21 @@ public class OreCollector : MonoBehaviour
     }
 
     private void OnTriggerStay2D(Collider2D collision)
-    {if (timer_time <= 0)
+    {
+        if (collision.gameObject.tag == "Player")
         {
-            timer.SetActive(false);
-            timer_active = false;
-            if (Input.GetKeyDown(KeyCode.E))
+            if (timer_time <= 0)
             {
-                uv.oreCounter++;
-                timer_time = 3.0f;
-                timer.SetActive(true);
-                timer_active = true;
-                forge.oreSprites.Add(counter);
+                timer.SetActive(false);
+                timer_active = false;
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    uv.oreCounter++;
+                    timer_time = 3.0f;
+                    timer.SetActive(true);
+                    timer_active = true;
+                    forge.oreSprites.Add(counter);
+                }
             }
         }
     }
