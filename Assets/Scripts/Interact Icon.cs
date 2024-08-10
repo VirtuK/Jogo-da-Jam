@@ -8,8 +8,7 @@ public class InteractIcon : MonoBehaviour
     public GameObject boxPrefab;
     public GameObject interaction;
     GameObject g;
-    public Sprite sprite;
-
+    public Sprite sprite; 
     
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
