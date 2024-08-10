@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b852af3590a2db140bced8a202ae3d95
+guid: 062a0cc95f1ead547adba40cef90f161
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7793438458169955285
-    second: martelov3 icon_0
+      213: -8870189454920610912
+    second: chaminev3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: martelov3 icon_0
+      name: chaminev3_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 10
         y: 0
-        width: 32
-        height: 31
+        width: 12
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5d3961e7cfad72c60800000000000000
-      internalID: 7793438458169955285
+      spriteID: 0ab8a01efa1c6e480800000000000000
+      internalID: -8870189454920610912
       vertices: []
       indices: 
       edges: []
@@ -144,7 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      martelov3 icon_0: 7793438458169955285
+      chaminev3_0: -8870189454920610912
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
