@@ -2,20 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OreCollector : MonoBehaviour
 {
     // Start is called before the first frame update
     public TMP_Text countTxt;
-    int count = 0;
+    public Forge forge;
+
+    public Image counter;
     public GameObject timer;
     float timer_time = 0;
     bool timer_active;
-
+    public UniversalVariables uv;
     // Update is called once per frame
     void Update()
     {
-        countTxt.text = ": " + count;
+        countTxt.text = ": " + uv.oreCounter;
         if(timer_time > 0)
         {
             timer_time-= Time.deltaTime;
@@ -33,10 +36,11 @@ public class OreCollector : MonoBehaviour
             timer_active = false;
             if (Input.GetKeyDown(KeyCode.E))
             {
-                count++;
+                uv.oreCounter++;
                 timer_time = 3.0f;
                 timer.SetActive(true);
                 timer_active = true;
+                forge.oreSprites.Add(counter);
             }
         }
     }
