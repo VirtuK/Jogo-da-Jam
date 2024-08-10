@@ -35,11 +35,16 @@ public class OreCollector : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             oreActive = true;
-            if (timer_time <= 0)
-            {
-                timer.SetActive(false);
-                timer_active = false;
-            }
+            
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (timer_time <= 0)
+        {
+            timer.SetActive(false);
+            timer_active = false;
         }
     }
 
