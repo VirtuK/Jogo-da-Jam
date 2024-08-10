@@ -16,6 +16,8 @@ public class OreCollector : MonoBehaviour
     bool timer_active;
     public UniversalVariables uv;
     public bool oreActive;
+    public AudioClip oreClip;
+    public AudioClip lockedOreClip;
     
     // Update is called once per frame
 
@@ -71,6 +73,13 @@ public class OreCollector : MonoBehaviour
             timer.SetActive(true);
             timer_active = true;
             forge.oreSprites.Add(counter);
+            GetComponent<AudioSource>().clip = oreClip;
+            GetComponent<AudioSource>().Play();
+        }
+        else
+        {
+            GetComponent<AudioSource>().clip = lockedOreClip;
+            GetComponent<AudioSource>().Play();
         }
             
         
