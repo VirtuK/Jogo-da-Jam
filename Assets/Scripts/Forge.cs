@@ -18,6 +18,7 @@ public class Forge : MonoBehaviour
     bool timer_active = false;
     float timer_time = 0;
     public TMP_Text timer;
+    public bool forge;
     // Start is called before the first frame update
 
 
@@ -30,35 +31,40 @@ public class Forge : MonoBehaviour
                 forgeSelector.SetActive(false);
                 forgeActive = false;
             }
+            forge = false;
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (Input.anyKeyDown)
+            forge = true;
+        }
+        
+    }
+
+    public void click()
+    {
+        
+
+            if (!forgeActive)
             {
 
-                if (!forgeActive)
+                forgeSelector.SetActive(true);
+                forgeActive = true;
+                if (oreSprites.Count > 0)
                 {
-
-                    forgeSelector.SetActive(true);
-                    forgeActive = true;
-                    if (oreSprites.Count > 0)
-                    {
-                        selectorSlots[0].image.sprite = oreSprites[0].sprite;
-                    }
-
-
+                    selectorSlots[0].image.sprite = oreSprites[0].sprite;
                 }
-                else
-                {
-                    forgeSelector.SetActive(false);
-                    forgeActive = false;
-                }
+
+
             }
-        }
+            else
+            {
+                forgeSelector.SetActive(false);
+                forgeActive = false;
+            }
         
     }
 

@@ -6,27 +6,23 @@ using UnityEngine.UI;
 public class anvil : MonoBehaviour
 {
     public GameObject anvilSelector;
-    bool anvilActive;
+    public bool anvilActive;
     public GameObject toolsCounter;
     public GameObject toolsImagePrefab;
     public UniversalVariables uv;
+    public bool anvilClick;
 
 
     public List<Sprite> tools;
     int pos = 70;
+    
     // Start is called before the first frame update
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (Input.anyKeyDown)
-            {
-                if (collision.gameObject.tag == "Player")
-                {
-                    anvilSelector.SetActive(true);
-                    anvilActive = true;
-                }
-            }
+            anvilClick = true;
+            
         }
     }
 
@@ -39,7 +35,16 @@ public class anvil : MonoBehaviour
                 anvilSelector.SetActive(false);
                 anvilActive = false;
             }
+            anvilClick = false;
         }
+    }
+
+    public void click()
+    {
+        
+           anvilSelector.SetActive(true);
+           anvilActive = true;
+        
     }
     
     public void build(string tool)

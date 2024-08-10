@@ -5,7 +5,7 @@ using UnityEngine;
 public class InteractIcon : MonoBehaviour
 {
     public GameObject boxPrefab;
-    public GameObject player;
+    public GameObject interaction;
     GameObject g;
 
     public bool forgeActive;
@@ -15,8 +15,9 @@ public class InteractIcon : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            g = Instantiate(boxPrefab, new Vector2(collision.gameObject.transform.position.x, collision.gameObject.transform.position.y + 1.5f), Quaternion.identity);
-            g.transform.SetParent(player.transform);
+            g = Instantiate(boxPrefab, new Vector2(interaction.transform.position.x - 400, interaction.transform.position.y), Quaternion.identity);
+           g.transform.SetParent(interaction.transform, false);
+            g.transform.localScale = new Vector3(150, 150, 0);
 
         }
     }

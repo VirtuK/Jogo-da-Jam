@@ -5,7 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - boxPrefab: {fileID: 4559067337548631577, guid: 29c7e7a953ed4424ea853a525332598b, type: 3}
-  - player: {fileID: 275689756409663143, guid: d50583c129355ad4e8b903ad91514b53, type: 3}
+  - interaction: {fileID: 6426699122281466213, guid: a8d001768a430a24e85252d779f23a23, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
