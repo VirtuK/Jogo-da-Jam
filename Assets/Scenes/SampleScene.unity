@@ -2475,7 +2475,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.005824566, y: 0}
+  m_Offset: {x: -0.06320396, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2485,7 +2485,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.3862185, y: 1}
+  m_Size: {x: 1.404532, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &1062007426
 MonoBehaviour:
@@ -2501,7 +2501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxPrefab: {fileID: 4559067337548631577, guid: 29c7e7a953ed4424ea853a525332598b, type: 3}
   interaction: {fileID: 956306791}
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 46cc8102480830d4c99aad67c4a84ca3, type: 3}
 --- !u!212 &1062007427
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2565,7 +2565,7 @@ Transform:
   m_GameObject: {fileID: 1062007424}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.102621, y: -4.4, z: -8.394428}
+  m_LocalPosition: {x: 19.102621, y: -4.52, z: -8.394428}
   m_LocalScale: {x: 3.1036, y: 3.1036, z: 3.1036}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2590,8 +2590,6 @@ MonoBehaviour:
   timer: {fileID: 180744995}
   uv: {fileID: 1716955436}
   oreActive: 0
-  ic: {fileID: 0}
-  oreIM: {fileID: 0}
 --- !u!1 &1080468087
 GameObject:
   m_ObjectHideFlags: 0
@@ -3892,8 +3890,6 @@ MonoBehaviour:
   forgeActive: 0
   timer: {fileID: 2107380051}
   forge: 0
-  ic: {fileID: 0}
-  forgeIM: {fileID: 0}
 --- !u!61 &1713055356
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3928,7 +3924,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.020300984, y: 0.21133333}
+  m_Offset: {x: -0.011041582, y: 0.21133333}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3938,7 +3934,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.3292205, y: 1.92}
+  m_Size: {x: 1.0032587, y: 1.92}
   m_EdgeRadius: 0
 --- !u!212 &1713055357
 SpriteRenderer:
@@ -4003,7 +3999,7 @@ Transform:
   m_GameObject: {fileID: 1713055354}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.512621, y: -3.96, z: -7.6544285}
+  m_LocalPosition: {x: 11.512621, y: -4.08, z: -7.6544285}
   m_LocalScale: {x: 4.6410003, y: 4.6410003, z: 4.6410003}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -4024,7 +4020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxPrefab: {fileID: 4559067337548631577, guid: 29c7e7a953ed4424ea853a525332598b, type: 3}
   interaction: {fileID: 956306791}
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: a3a2c936c721535428347ae1ff30e464, type: 3}
 --- !u!1 &1716955435
 GameObject:
   m_ObjectHideFlags: 0
@@ -4676,7 +4672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxPrefab: {fileID: 4559067337548631577, guid: 29c7e7a953ed4424ea853a525332598b, type: 3}
   interaction: {fileID: 956306791}
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: a1eef8e9044a39a47b480e713e39a27d, type: 3}
 --- !u!114 &1830196824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4700,8 +4696,6 @@ MonoBehaviour:
   - {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  ic: {fileID: 0}
-  deskIM: {fileID: 0}
 --- !u!1 &1846702953
 GameObject:
   m_ObjectHideFlags: 0
@@ -5168,7 +5162,7 @@ Transform:
   m_GameObject: {fileID: 1955298384}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.4526203, y: -4.07, z: -7.7044287}
+  m_LocalPosition: {x: 3.4526203, y: -4.19, z: -7.7044287}
   m_LocalScale: {x: 4.2085, y: 4.2085, z: 4.2085}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5192,8 +5186,6 @@ MonoBehaviour:
   toolsImagePrefab: {fileID: 7300788681544441431, guid: 6a461fc59c5694a4592eb87881768bb6, type: 3}
   uv: {fileID: 1716955436}
   anvilClick: 0
-  ic: {fileID: 0}
-  anvilIM: {fileID: 21300000, guid: abbc1736876aa3d4bbcb0bdd14ecd725, type: 3}
   tools:
   - {fileID: -2413806693520163455, guid: c73af2eda9e84fa4e96dbe30ce74a7b9, type: 3}
   - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
@@ -5250,7 +5242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxPrefab: {fileID: 4559067337548631577, guid: 29c7e7a953ed4424ea853a525332598b, type: 3}
   interaction: {fileID: 956306791}
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: abbc1736876aa3d4bbcb0bdd14ecd725, type: 3}
 --- !u!1 &1979930193
 GameObject:
   m_ObjectHideFlags: 0

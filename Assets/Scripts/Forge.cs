@@ -19,14 +19,10 @@ public class Forge : MonoBehaviour
     float timer_time = 0;
     public TMP_Text timer;
     public bool forge;
-    public InteractIcon ic;
-    public Sprite forgeIM;
+    
     // Start is called before the first frame update
 
-    private void Start()
-    {
-        ic = this.gameObject.GetComponent<InteractIcon>();
-    }
+    
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -45,7 +41,7 @@ public class Forge : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             forge = true;
-            ic.sprite = forgeIM;
+            
         }
         
     }

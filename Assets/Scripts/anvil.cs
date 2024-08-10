@@ -11,23 +11,19 @@ public class anvil : MonoBehaviour
     public GameObject toolsImagePrefab;
     public UniversalVariables uv;
     public bool anvilClick;
-    public InteractIcon ic;
-    public Sprite anvilIM;
+    
 
     public List<Sprite> tools;
     int pos = 70;
 
-    private void Start()
-    {
-        ic = this.gameObject.GetComponent<InteractIcon>();
-    }
+    
     // Start is called before the first frame update
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             anvilClick = true;
-            ic.sprite = anvilIM;
+            
 
         }
     }

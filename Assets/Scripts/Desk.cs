@@ -13,13 +13,9 @@ public class Desk : MonoBehaviour
     private GameObject g;
     private GameObject i;
     public List<Sprite> sprites = new List<Sprite>();
-    public InteractIcon ic;
-    public Sprite deskIM;
+
     // Start is called before the first frame update
-    private void Start()
-    {
-        ic = this.gameObject.GetComponent<InteractIcon>();
-    }
+   
     public void click()
     {
         if (!desk)
@@ -46,7 +42,7 @@ public class Desk : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             deskActive = true;
-            ic.sprite = deskIM;
+
         }
     }
 }
