@@ -44,6 +44,7 @@ public class anvil : MonoBehaviour
             player.Rebind();
             forging = false;
             b = false;
+            player.SetBool("moving", true);
         }
     }
     // Start is called before the first frame update

@@ -35,7 +35,7 @@ public class Desk : MonoBehaviour
     }
     private void Update()
     {
-        scoreText.text = "" + uv.finishedtools;
+        scoreText.text = "" + uv.finishedtools + "/6";
         if (npc_moveright)
         {
             moveNpcRight();
@@ -124,6 +124,7 @@ public class Desk : MonoBehaviour
         desk = false;
         npc_moveleft = true;
         uv.finishedtools++;
+        uv.tasksfinished++;
         Destroy(uv.tools[0]);
         uv.tools.Remove(uv.tools[0]);
         Destroy(uv.iconList[0]);
@@ -139,6 +140,7 @@ public class Desk : MonoBehaviour
         npc.GetComponent<SpriteRenderer>().sprite = npcs[rnd];
         desk = false;
         npc_moveleft = true;
+        uv.tasksfinished++;
         Destroy(uv.tools[0]);
         uv.tools.Remove(uv.tools[0]);
         Destroy(uv.iconList[0]);
