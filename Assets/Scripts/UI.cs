@@ -17,7 +17,7 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        oreText.text = "= " + uv.oreCounter;
-        HotOreText.text = "= " + uv.hotOreCounter;
+        oreText.text = "" + uv.oreCounter;
+        HotOreText.text = "" + uv.hotOreCounter;
     }
 }

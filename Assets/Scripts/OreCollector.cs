@@ -24,7 +24,7 @@ public class OreCollector : MonoBehaviour
    
     void Update()
     {
-        countTxt.text = ": " + uv.oreCounter;
+        countTxt.text = "" + uv.oreCounter;
         if(timer_time > 0)
         {
             timer_time-= Time.deltaTime;

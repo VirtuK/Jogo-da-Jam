@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,7 +25,7 @@ public class Desk : MonoBehaviour
     private int rnd;
     float speed;
     bool movEnd;
-
+    float timer_time = 5;
     // Start is called before the first frame update
     private void Start()
     {
@@ -33,7 +34,7 @@ public class Desk : MonoBehaviour
     }
     private void Update()
     {
-        scoreText.text = ": " + uv.finishedtools;
+        scoreText.text = "" + uv.finishedtools;
         if (npc_moveright)
         {
             moveNpcRight();
@@ -57,6 +58,16 @@ public class Desk : MonoBehaviour
                 }
             }
         }
+
+        if(timer_time > 0 && npc_moveright == false && npc_moveleft == false)
+        {
+            timer_time -= Time.deltaTime;
+
+        }
+        if(timer_time <= 0)
+        {
+            Idle(rnd + 1);
+        }
     }
     public void click()
     {
@@ -64,12 +75,12 @@ public class Desk : MonoBehaviour
         {
             g = Instantiate(boxPrefab, new Vector3(npc.transform.position.x + 1, npc.transform.position.y + 2.5f, 0), boxPrefab.transform.rotation);
             g.transform.SetParent(npc.transform);
-            i = Instantiate(itemPrefab, g.transform);
+            i = Instantiate(itemPrefab, new Vector3(g.transform.position.x + 0.1f, g.transform.transform.position.y + 0.1f, 0), Quaternion.identity);
             i.transform.SetParent(g.transform);
+            i.transform.localScale = new Vector3(1,1,1);
             i.AddComponent<SpriteRenderer>();
             r = Random.Range(0, 4);
             i.GetComponent<SpriteRenderer>().sprite = sprites[r];
-            i.GetComponent<SpriteRenderer>().color = Color.red;
             desk = true;
         }
         if (desk)
@@ -114,12 +125,15 @@ public class Desk : MonoBehaviour
 
     private void right()
     {
-        int rnd = Random.Range(0, 3);
+        rnd = Random.Range(0, 3);
         npc.GetComponent<SpriteRenderer>().sprite = npcs[rnd];
         desk = false;
+        npc_moveleft = true;
         uv.finishedtools++;
+        Destroy(uv.tools[0]);
         uv.tools.Remove(uv.tools[0]);
         Destroy(uv.iconList[0]);
+        uv.iconList.Remove(uv.iconList[0]);
         Destroy(g);
         Destroy(i);
 
@@ -130,10 +144,11 @@ public class Desk : MonoBehaviour
         rnd = Random.Range(0, 3);
         npc.GetComponent<SpriteRenderer>().sprite = npcs[rnd];
         desk = false;
-        setNpc(rnd + 1);
+        npc_moveleft = true;
         Destroy(uv.tools[0]);
         uv.tools.Remove(uv.tools[0]);
         Destroy(uv.iconList[0]);
+        uv.iconList.Remove(uv.iconList[0]);
         Destroy(g);
         Destroy(i);
     }
@@ -167,7 +182,6 @@ public class Desk : MonoBehaviour
 
     private void walkToStop(int x)
     {
-        print("aaaaa");
         switch (x)
         {
             case 1:
@@ -184,6 +198,27 @@ public class Desk : MonoBehaviour
                 break;
         }
     }
+
+    private void Idle(int x)
+    {
+        switch (x)
+        {
+            case 1:
+                npcComp.npc1StopToIdle();
+                break;
+            case 2:
+                npcComp.npc1StopToIdle();
+                break;
+            case 3:
+                npcComp.npc1StopToIdle();
+                break;
+            case 4:
+                npcComp.npc1StopToIdle();
+                break;
+        }
+        timer_time = 5;
+    }
+
 
     private void moveNpcRight()
     {

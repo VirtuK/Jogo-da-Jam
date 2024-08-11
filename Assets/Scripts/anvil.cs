@@ -14,7 +14,7 @@ public class anvil : MonoBehaviour
     
 
     public List<Sprite> tools;
-    int pos = 70;
+    int pos = 130;
 
     
     // Start is called before the first frame update
@@ -61,7 +61,7 @@ public class anvil : MonoBehaviour
                         uv.icon = Instantiate(toolsImagePrefab, new Vector3(toolsCounter.transform.position.x + pos, toolsCounter.transform.position.y, 0), Quaternion.identity, toolsCounter.transform);
                         uv.icon.AddComponent<Image>();
                         uv.icon.GetComponent<Image>().sprite = tools[0];
-                        pos += 70;
+                        pos += 130;
                         uv.tools.Add(uv.icon);
                         uv.iconList.Add(uv.icon);
                     }
@@ -73,7 +73,7 @@ public class anvil : MonoBehaviour
                         uv.icon = Instantiate(toolsImagePrefab, new Vector3(toolsCounter.transform.position.x + pos, toolsCounter.transform.position.y, 0), Quaternion.identity, toolsCounter.transform);
                         uv.icon.AddComponent<Image>();
                         uv.icon.GetComponent<Image>().sprite = tools[1];
-                        pos += 70;
+                        pos += 130;
                         uv.tools.Add(uv.icon);
                         uv.iconList.Add(uv.icon);
                     }
@@ -85,7 +85,7 @@ public class anvil : MonoBehaviour
                         uv.icon = Instantiate(toolsImagePrefab, new Vector3(toolsCounter.transform.position.x + pos, toolsCounter.transform.position.y, 0), Quaternion.identity, toolsCounter.transform);
                         uv.icon.AddComponent<Image>();
                         uv.icon.GetComponent<Image>().sprite = tools[2];
-                        pos += 70;
+                        pos += 130;
                         uv.tools.Add(uv.icon);
                         uv.iconList.Add(uv.icon);
                     }
@@ -97,7 +97,7 @@ public class anvil : MonoBehaviour
                         uv.icon = Instantiate(toolsImagePrefab, new Vector3(toolsCounter.transform.position.x + pos, toolsCounter.transform.position.y, 0), Quaternion.identity, toolsCounter.transform);
                         uv.icon.AddComponent<Image>();
                         uv.icon.GetComponent<Image>().sprite = tools[3];
-                        pos += 70;
+                        pos += 130;
                         uv.iconList.Add(uv.icon);
                         uv.tools.Add(uv.icon);
                     }
@@ -109,7 +109,7 @@ public class anvil : MonoBehaviour
                         uv.icon = Instantiate(toolsImagePrefab, new Vector3(toolsCounter.transform.position.x + pos, toolsCounter.transform.position.y, 0), Quaternion.identity, toolsCounter.transform);
                         uv.icon.AddComponent<Image>();
                         uv.icon.GetComponent<Image>().sprite = tools[4];
-                        pos += 70;
+                        pos += 130;
                         uv.iconList.Add(uv.icon);
                         uv.tools.Add(uv.icon);
                     }
