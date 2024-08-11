@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 062a0cc95f1ead547adba40cef90f161
+guid: 453e8023447e641458052722c7d28852
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8870189454920610912
-    second: chaminev3_0
+      213: 6913200759446940891
+    second: woodplate_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chaminev3_0
+      name: woodplate_0
       rect:
         serializedVersion: 2
-        x: 10
+        x: 0
         y: 0
-        width: 12
-        height: 28
+        width: 32
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ab8a01efa1c6e480800000000000000
-      internalID: -8870189454920610912
+      spriteID: bdcabc7867f90ff50800000000000000
+      internalID: 6913200759446940891
       vertices: []
       indices: 
       edges: []
@@ -144,7 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      chaminev3_0: -8870189454920610912
+      woodplate_0: 6913200759446940891
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

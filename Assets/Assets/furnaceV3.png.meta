@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f382e5cc6b71dd64c9d83cb1982c5e3b
+guid: 5b3fcb0cce2f55f418ad07b566cf7971
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6862716839941008008
-    second: chaminev2_0
+      213: -1562558361043037391
+    second: furnaceV3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chaminev2_0
+      name: furnaceV3_0
       rect:
         serializedVersion: 2
-        x: 10
+        x: 1
         y: 0
-        width: 12
-        height: 22
+        width: 30
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8759931f46bb2c0a0800000000000000
-      internalID: -6862716839941008008
+      spriteID: 133963d037da05ae0800000000000000
+      internalID: -1562558361043037391
       vertices: []
       indices: 
       edges: []
@@ -144,7 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      chaminev2_0: -6862716839941008008
+      furnaceV3_0: -1562558361043037391
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
