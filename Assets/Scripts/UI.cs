@@ -19,5 +19,6 @@ public class UI : MonoBehaviour
     {
         oreText.text = "" + uv.oreCounter;
         HotOreText.text = "" + uv.hotOreCounter;
+        
     }
 }

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8888753047440421870}
   - component: {fileID: 4199274822041100004}
   - component: {fileID: 556021105799280294}
+  - component: {fileID: 2934382827797009000}
+  - component: {fileID: 2017123534760987156}
   m_Layer: 5
   m_Name: boxPrefab
   m_TagString: Untagged
@@ -110,6 +112,7 @@ MonoBehaviour:
   forge: {fileID: 0}
   collector: {fileID: 0}
   anvil: {fileID: 0}
+  desk: {fileID: 0}
 --- !u!222 &4199274822041100004
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -148,3 +151,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2934382827797009000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4559067337548631577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6366ee97f6b541449155028b9487355a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &2017123534760987156
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4559067337548631577}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0db2988cd12da4e4eb3e88d8e2d30362, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

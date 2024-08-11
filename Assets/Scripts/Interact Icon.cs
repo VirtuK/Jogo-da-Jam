@@ -13,11 +13,14 @@ public class InteractIcon : MonoBehaviour
     public AudioSource aus;
     public AudioClip clip;
     bool desk;
-    
+    public int anim;
+    public Animator animator;
     // Start is called before the first frame update
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        
         if (collision.gameObject.tag == "Player")
         {
             if (this.gameObject.name != "Desk")
@@ -28,6 +31,19 @@ public class InteractIcon : MonoBehaviour
                 g.GetComponent<Button>().image.sprite = sprite;
                 aus.clip = clip;
                 aus.Play();
+                animator = g.GetComponent<Animator>();
+                switch (anim)
+                {
+                    case 1:
+                        fireAnim();
+                        break;
+                    case 2:
+                        marAnim();
+                        break;
+                    case 3:
+                        minAnim();
+                        break;
+                }
             }
             else
             {
@@ -39,6 +55,9 @@ public class InteractIcon : MonoBehaviour
                     g.GetComponent<Button>().image.sprite = sprite;
                     aus.clip = clip;
                     aus.Play();
+                    animator = g.GetComponent<Animator>();
+                    excAnim();
+                    desk = true;
                 }
             }
 
@@ -62,6 +81,8 @@ public class InteractIcon : MonoBehaviour
                         g.transform.SetParent(interaction.transform, false);
                         g.transform.localScale = new Vector3(150, 150, 0);
                         g.GetComponent<Button>().image.sprite = sprite;
+                        animator = g.GetComponent<Animator>();
+                        excAnim();
                         aus.clip = clip;
                         aus.Play();
                         desk = true;
@@ -81,4 +102,31 @@ public class InteractIcon : MonoBehaviour
             desk = false;
         }
     }
+
+    public void fireAnim()
+    {
+        animator.Rebind();
+        animator.Update(0f);
+        animator.SetBool("fire", true);
+    }  
+    
+    public void excAnim()
+    {
+        animator.Rebind();
+        animator.Update(0f);
+        animator.SetBool("exc", true);
+    }
+     public void marAnim()
+    {
+        animator.Rebind();
+        animator.Update(0f);
+        animator.SetBool("mar", true);
+    }
+    public void minAnim()
+    {
+        animator.Rebind();
+        animator.Update(0f);
+        animator.SetBool("min", true);
+    }
+
 }
