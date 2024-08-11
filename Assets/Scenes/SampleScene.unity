@@ -1685,7 +1685,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.51
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -14213,7 +14213,7 @@ MonoBehaviour:
   tasksfinished: 0
   icon: {fileID: 0}
   iconList: []
-  ui: {fileID: 0}
+  ui: {fileID: 461693416}
 --- !u!4 &1716955437
 Transform:
   m_ObjectHideFlags: 0

@@ -41,10 +41,9 @@ public class anvil : MonoBehaviour
         {
 
             player.SetBool("forge", false);
-            player.Rebind();
             forging = false;
             b = false;
-            player.SetBool("moving", true);
+            //player.SetBool("moving", true);
         }
     }
     // Start is called before the first frame update
@@ -101,7 +100,6 @@ public class anvil : MonoBehaviour
                         uv.icon = Instantiate(toolsImagePrefab, new Vector3(toolsCounter.transform.position.x + pos, toolsCounter.transform.position.y, 0), Quaternion.identity, toolsCounter.transform);
                         uv.icon.AddComponent<Image>();
                         uv.icon.GetComponent<Image>().sprite = tools[0];
-                        pos += 130;
                         uv.tools.Clear();
                         uv.tools.Add(uv.icon);
                         uv.iconList.Clear();
@@ -116,7 +114,6 @@ public class anvil : MonoBehaviour
                         uv.icon = Instantiate(toolsImagePrefab, new Vector3(toolsCounter.transform.position.x + pos, toolsCounter.transform.position.y, 0), Quaternion.identity, toolsCounter.transform);
                         uv.icon.AddComponent<Image>();
                         uv.icon.GetComponent<Image>().sprite = tools[1];
-                        pos += 130;
                         uv.tools.Clear();
                         uv.tools.Add(uv.icon);
                         uv.iconList.Clear();
@@ -131,7 +128,6 @@ public class anvil : MonoBehaviour
                         uv.icon = Instantiate(toolsImagePrefab, new Vector3(toolsCounter.transform.position.x + pos, toolsCounter.transform.position.y, 0), Quaternion.identity, toolsCounter.transform);
                         uv.icon.AddComponent<Image>();
                         uv.icon.GetComponent<Image>().sprite = tools[2];
-                        pos += 130;
                         uv.tools.Clear();
                         uv.tools.Add(uv.icon);
                         uv.iconList.Clear();
@@ -146,7 +142,6 @@ public class anvil : MonoBehaviour
                         uv.icon = Instantiate(toolsImagePrefab, new Vector3(toolsCounter.transform.position.x + pos, toolsCounter.transform.position.y, 0), Quaternion.identity, toolsCounter.transform);
                         uv.icon.AddComponent<Image>();
                         uv.icon.GetComponent<Image>().sprite = tools[3];
-                        pos += 130;
                         uv.tools.Clear();
                         uv.tools.Add(uv.icon);
                         uv.iconList.Clear();
@@ -161,7 +156,6 @@ public class anvil : MonoBehaviour
                         uv.icon = Instantiate(toolsImagePrefab, new Vector3(toolsCounter.transform.position.x + pos, toolsCounter.transform.position.y, 0), Quaternion.identity, toolsCounter.transform);
                         uv.icon.AddComponent<Image>();
                         uv.icon.GetComponent<Image>().sprite = tools[4];
-                        pos += 130;
                         uv.tools.Clear();
                         uv.tools.Add(uv.icon);
                         uv.iconList.Clear();

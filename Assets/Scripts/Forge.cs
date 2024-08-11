@@ -85,11 +85,15 @@ public class Forge : MonoBehaviour
 
         if (timer_time < 0)
         {
-            uv.oreCounter--;
+
             uv.hotOreCounter++;
             timer_active = false;
             timer.gameObject.SetActive(false);
             timer_time = 0;
+            if(uv.oreCounter <= 0)
+            {
+                selectorSlots[0].image.color = new Color(0, 0, 0, 0);
+            }
         }
     }
     public void slot1()
@@ -100,10 +104,12 @@ public class Forge : MonoBehaviour
             {
                 timer_time = 5;
                 print("slot");
+                uv.oreCounter--;
                 timer_active = true;
-                selectorSlots[0].image.color = new Color(0, 0, 0, 0);
+                
                 
             }
+            
         }
         forgeSelector.SetActive(false);
     }

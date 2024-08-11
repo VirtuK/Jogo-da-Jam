@@ -57,7 +57,7 @@ public class UI : MonoBehaviour
 
     public void restart()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("menu");
     }
 
     public void mutar()

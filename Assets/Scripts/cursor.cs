@@ -20,12 +20,14 @@ public class cursor : MonoBehaviour
     bool exit;
     bool credits;
     bool credits2;
+    bool credits3;
     public AudioSource st;
     public AudioClip soundtrack;
     public AudioClip clip;
     public GameObject faisca;
     public GameObject menu;
     public GameObject menuC;
+    public GameObject menuD;
     public bool mute = false;
     public Image muteButton;
     public Sprite muted;
@@ -73,11 +75,17 @@ public class cursor : MonoBehaviour
             {
                 menu.SetActive(false);
                 menuC.SetActive(true);
+                credits = false;
             }
             else if (credits2)
             {
                 menu.SetActive(true);
                 menuC.SetActive(false);
+                credits2 = false;
+            }
+            else if (credits3)
+            {
+                menuD.SetActive(true);
             }
 
 
@@ -114,6 +122,12 @@ public class cursor : MonoBehaviour
         time = 0.8f;
         start = true;
        
+    }
+
+    public void Tutorial()
+    {
+        time = 0.8f;
+        credits3 = true;
     }
 
     public void ExitGame()
