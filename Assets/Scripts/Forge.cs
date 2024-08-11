@@ -78,7 +78,7 @@ public class Forge : MonoBehaviour
             if (timer_active)
             {
                 timer.gameObject.SetActive(true);
-                timer.GetComponent<TMP_Text>().text = "Please wait " + timer_time + " seconds";
+                timer.GetComponent<TMP_Text>().text = "The forge needs more " + (int)timer_time + " seconds";
             }
         }
 

@@ -129,6 +129,7 @@ public class Desk : MonoBehaviour
     {
         rnd = Random.Range(0, 3);
         npc.GetComponent<SpriteRenderer>().sprite = npcs[rnd];
+        setNpc(rnd + 1);
         desk = false;
         npc_moveleft = true;
         uv.finishedtools++;
@@ -145,6 +146,7 @@ public class Desk : MonoBehaviour
     {
         rnd = Random.Range(0, 3);
         npc.GetComponent<SpriteRenderer>().sprite = npcs[rnd];
+        setNpc(rnd + 1);
         desk = false;
         npc_moveleft = true;
         Destroy(uv.tools[0]);
