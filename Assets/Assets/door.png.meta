@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 59c469cd1f618dd4abbd7a22aad9561f
+guid: bce5a8ab6d669e740a4685048854344d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4167676567682218252
-    second: coal1_0
+      213: -7341407202210888751
+    second: door_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: coal1_0
+      name: door_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 8
+        x: 4
+        y: 0
         width: 24
-        height: 21
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c09fa6bc1cf86d930800000000000000
-      internalID: 4167676567682218252
+      spriteID: 1d3c9b8cb051e1a90800000000000000
+      internalID: -7341407202210888751
       vertices: []
       indices: 
       edges: []
@@ -144,7 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      coal1_0: 4167676567682218252
+      door_0: -7341407202210888751
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: coal4
+  m_Name: door
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: d05b7d6e48cde4a4e801ddd70e0b44ff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bce5a8ab6d669e740a4685048854344d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
