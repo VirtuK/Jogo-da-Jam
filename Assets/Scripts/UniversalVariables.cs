@@ -15,7 +15,7 @@ public class UniversalVariables : MonoBehaviour
 
     private void Update()
     {
-        if(finishedtools == 5)
+        if(finishedtools == 6)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
         }

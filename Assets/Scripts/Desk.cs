@@ -18,6 +18,7 @@ public class Desk : MonoBehaviour
     public UniversalVariables uv;
     int r;
     public List<Sprite> npcs = new List<Sprite>();
+    public List<Sprite> broken = new List<Sprite>();   
     public TMP_Text scoreText;
     public npc npcComp;
     public bool npc_moveright;
@@ -75,12 +76,13 @@ public class Desk : MonoBehaviour
         {
             g = Instantiate(boxPrefab, new Vector3(npc.transform.position.x + 1, npc.transform.position.y + 2.5f, 0), boxPrefab.transform.rotation);
             g.transform.SetParent(npc.transform);
+            g.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             i = Instantiate(itemPrefab, new Vector3(g.transform.position.x + 0.1f, g.transform.transform.position.y + 0.1f, 0), Quaternion.identity);
             i.transform.SetParent(g.transform);
-            i.transform.localScale = new Vector3(1,1,1);
+            i.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
             i.AddComponent<SpriteRenderer>();
             r = Random.Range(0, 4);
-            i.GetComponent<SpriteRenderer>().sprite = sprites[r];
+            i.GetComponent<SpriteRenderer>().sprite = broken[r];
             desk = true;
         }
         if (desk)

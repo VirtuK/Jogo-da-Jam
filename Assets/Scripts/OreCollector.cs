@@ -31,7 +31,7 @@ public class OreCollector : MonoBehaviour
         }
         if (timer_active)
         {
-            timer.GetComponent<TMP_Text>().text = "Please wait " + timer_time + " seconds";
+            timer.GetComponent<TMP_Text>().text = "The chest is locked for: " + (int)timer_time;
         }
     }
 
