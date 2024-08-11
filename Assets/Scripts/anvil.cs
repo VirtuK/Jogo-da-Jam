@@ -14,6 +14,7 @@ public class anvil : MonoBehaviour
     public bool anvilClick;
     string tool;
 
+
     public List<Sprite> tools;
     int pos = 130;
     float timer_time = 3;
@@ -29,7 +30,6 @@ public class anvil : MonoBehaviour
             {
                 
                 timer_time -= Time.deltaTime;
-                print("yes");
             }
             if (!b)
             {
@@ -39,9 +39,11 @@ public class anvil : MonoBehaviour
         }
         if(timer_time <= 0)
         {
-            print("no");
+
             player.SetBool("forge", false);
+            player.Rebind();
             forging = false;
+            b = false;
         }
     }
     // Start is called before the first frame update
@@ -86,6 +88,7 @@ public class anvil : MonoBehaviour
     {
         b = true;
         timer_time = 3;
+
         if (uv.tools.Count == 0)
         {
             switch (tool)
@@ -99,7 +102,9 @@ public class anvil : MonoBehaviour
                         uv.icon.AddComponent<Image>();
                         uv.icon.GetComponent<Image>().sprite = tools[0];
                         pos += 130;
+                        uv.tools.Clear();
                         uv.tools.Add(uv.icon);
+                        uv.iconList.Clear();
                         uv.iconList.Add(uv.icon);
                     }
                     break;
@@ -112,7 +117,9 @@ public class anvil : MonoBehaviour
                         uv.icon.AddComponent<Image>();
                         uv.icon.GetComponent<Image>().sprite = tools[1];
                         pos += 130;
+                        uv.tools.Clear();
                         uv.tools.Add(uv.icon);
+                        uv.iconList.Clear();
                         uv.iconList.Add(uv.icon);
                     }
                     break;
@@ -125,7 +132,9 @@ public class anvil : MonoBehaviour
                         uv.icon.AddComponent<Image>();
                         uv.icon.GetComponent<Image>().sprite = tools[2];
                         pos += 130;
+                        uv.tools.Clear();
                         uv.tools.Add(uv.icon);
+                        uv.iconList.Clear();
                         uv.iconList.Add(uv.icon);
                     }
                     break;
@@ -138,8 +147,10 @@ public class anvil : MonoBehaviour
                         uv.icon.AddComponent<Image>();
                         uv.icon.GetComponent<Image>().sprite = tools[3];
                         pos += 130;
-                        uv.iconList.Add(uv.icon);
+                        uv.tools.Clear();
                         uv.tools.Add(uv.icon);
+                        uv.iconList.Clear();
+                        uv.iconList.Add(uv.icon);
                     }
                     break;
                 case "hoe":
@@ -151,8 +162,10 @@ public class anvil : MonoBehaviour
                         uv.icon.AddComponent<Image>();
                         uv.icon.GetComponent<Image>().sprite = tools[4];
                         pos += 130;
-                        uv.iconList.Add(uv.icon);
+                        uv.tools.Clear();
                         uv.tools.Add(uv.icon);
+                        uv.iconList.Clear();
+                        uv.iconList.Add(uv.icon);
                     }
                     break;
             }

@@ -75,6 +75,8 @@ public class OreCollector : MonoBehaviour
             forge.oreSprites.Add(counter);
             GetComponent<AudioSource>().clip = oreClip;
             GetComponent<AudioSource>().Play();
+            forge.selectorSlots[0].image.color = new Color(255, 255, 255, 255);
+            
         }
         else
         {

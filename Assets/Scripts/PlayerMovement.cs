@@ -12,13 +12,41 @@ public class PlayerMovement : MonoBehaviour
     Vector2 lastPosition;
     float position;
     public float step;
+    public GameObject anvil;
     void Update()
     {
         if (GetComponent<Animator>().GetBool("forge") == true)
         {
-            GetComponent<Animator>().SetBool("moving", false);
-            movement = false;
-            speed = 0;
+            lastPosition = anvil.transform.position;
+            if (movement && transform.position.x != lastPosition.x)
+            {
+                step = speed * Time.deltaTime;
+                position = Vector2.MoveTowards(transform.position, lastPosition, step).x;
+                transform.position = new Vector3(position, transform.position.y, -1.48f);
+                GetComponent<Animator>().SetBool("moving", true);
+            }
+            if (lastPosition.x > transform.position.x)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+                if (lastPosition.x - transform.position.x < 0.5)
+                {
+                    GetComponent<Animator>().SetBool("moving", false);
+                    movement = false;
+                    speed = 0;
+                }
+            }
+
+            if (lastPosition.x < transform.position.x)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+                if (transform.position.x - lastPosition.x < 0.5)
+                {
+                    GetComponent<Animator>().SetBool("moving", false);
+                    movement = false;
+                    speed = 0;
+                }
+            }
+
         }
         else
         {

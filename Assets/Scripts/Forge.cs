@@ -58,6 +58,7 @@ public class Forge : MonoBehaviour
                 if (oreSprites.Count > 0)
                 {
                     selectorSlots[0].image.sprite = oreSprites[0].sprite;
+                    
                 }
 
 
@@ -100,8 +101,11 @@ public class Forge : MonoBehaviour
                 timer_time = 5;
                 print("slot");
                 timer_active = true;
+                selectorSlots[0].image.color = new Color(0, 0, 0, 0);
+                
             }
         }
+        forgeSelector.SetActive(false);
     }
 
 }

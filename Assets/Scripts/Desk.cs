@@ -45,18 +45,10 @@ public class Desk : MonoBehaviour
             moveNpcLeft();
             if (movEnd)
             {
-                int previousrnd = rnd;
                 rnd = Random.Range(0, 3);
-                if (rnd == previousrnd)
-                {
-                    rnd = Random.Range(0, 3);
-                }
-
-                else
-                {
-                    setNpc(rnd + 1);
-                    movEnd = false;
-                }
+                setNpc(rnd + 1);
+                movEnd = false;
+                
             }
         }
 
@@ -129,7 +121,6 @@ public class Desk : MonoBehaviour
     {
         rnd = Random.Range(0, 3);
         npc.GetComponent<SpriteRenderer>().sprite = npcs[rnd];
-        setNpc(rnd + 1);
         desk = false;
         npc_moveleft = true;
         uv.finishedtools++;
@@ -146,7 +137,6 @@ public class Desk : MonoBehaviour
     {
         rnd = Random.Range(0, 3);
         npc.GetComponent<SpriteRenderer>().sprite = npcs[rnd];
-        setNpc(rnd + 1);
         desk = false;
         npc_moveleft = true;
         Destroy(uv.tools[0]);
@@ -259,7 +249,7 @@ public class Desk : MonoBehaviour
             npc.GetComponent<SpriteRenderer>().flipX = true;
             pos = Vector2.MoveTowards(npc.transform.position, deskPos, step);
             npc.transform.position = new Vector3(pos.x, npc.transform.position.y, npc.transform.position.z);
-            if (npc.transform.position.x - deskPos.x < 0.1f)
+            if (npc.transform.position.x - deskPos.x < 0.5f)
             {
                 walkToStop(rnd + 1);
                 speed = 0;
