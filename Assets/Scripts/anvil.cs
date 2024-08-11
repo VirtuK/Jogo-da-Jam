@@ -88,7 +88,6 @@ public class anvil : MonoBehaviour
     {
         b = true;
         timer_time = 3;
-
         if (uv.tools.Count == 0)
         {
             switch (tool)
