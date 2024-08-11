@@ -18,12 +18,45 @@ public class Desk : MonoBehaviour
     int r;
     public List<Sprite> npcs = new List<Sprite>();
     public TMP_Text scoreText;
+    public npc npcComp;
+    public bool npc_moveright;
+    public bool npc_moveleft;
+    private int rnd;
+    float speed;
+    bool movEnd;
 
     // Start is called before the first frame update
-
+    private void Start()
+    {
+        rnd = Random.Range(0, 3);
+        setNpc(rnd + 1);
+    }
     private void Update()
     {
         scoreText.text = ": " + uv.finishedtools;
+        if (npc_moveright)
+        {
+            moveNpcRight();
+        }
+        else if (npc_moveleft)
+        {
+            moveNpcLeft();
+            if (movEnd)
+            {
+                int previousrnd = rnd;
+                rnd = Random.Range(0, 3);
+                if (rnd == previousrnd)
+                {
+                    rnd = Random.Range(0, 3);
+                }
+
+                else
+                {
+                    setNpc(rnd + 1);
+                    movEnd = false;
+                }
+            }
+        }
     }
     public void click()
     {
@@ -50,13 +83,15 @@ public class Desk : MonoBehaviour
                     right();
                     print("a");
                     desk = false;
+                    npc_moveleft = true;
                 }
               else
               {
                     wrong();
                     print("b");
                     desk = false;
-              }
+                    npc_moveleft = true;
+                }
            }
         }
     }
@@ -79,7 +114,7 @@ public class Desk : MonoBehaviour
 
     private void right()
     {
-        int rnd = Random.Range(0, 5);
+        int rnd = Random.Range(0, 3);
         npc.GetComponent<SpriteRenderer>().sprite = npcs[rnd];
         desk = false;
         uv.finishedtools++;
@@ -92,13 +127,111 @@ public class Desk : MonoBehaviour
 
     private void wrong()
     {
-        int rnd = Random.Range(0, 5);
+        rnd = Random.Range(0, 3);
         npc.GetComponent<SpriteRenderer>().sprite = npcs[rnd];
         desk = false;
+        setNpc(rnd + 1);
         Destroy(uv.tools[0]);
         uv.tools.Remove(uv.tools[0]);
         Destroy(uv.iconList[0]);
         Destroy(g);
         Destroy(i);
+    }
+
+    private void setNpc(int x)
+    {
+        switch (x)
+        {
+            case 1:
+                npcComp.npc1();
+                npc_moveright = true;
+                npcComp.npc1StopToWalk();
+                break;
+            case 2:
+                npcComp.npc2();
+                npc_moveright = true;
+                npcComp.npc2StopToWalk();
+                break;
+            case 3:
+                npcComp.npc3();
+                npc_moveright = true;
+                npcComp.npc3StopToWalk();
+                break;
+            case 4:
+                npcComp.npc4();
+                npc_moveright = true;
+                npcComp.npc4StopToWalk();
+                break;
+        }
+    }
+
+    private void walkToStop(int x)
+    {
+        print("aaaaa");
+        switch (x)
+        {
+            case 1:
+                npcComp.npc1WalkToStop();
+                break;
+            case 2:
+                npcComp.npc2WalkToStop();
+                break;
+            case 3:
+                npcComp.npc3WalkToStop();
+                break;
+            case 4:
+                npcComp.npc4WalkToStop();
+                break;
+        }
+    }
+
+    private void moveNpcRight()
+    {
+        speed = 5;
+        Vector3 pos;
+        Vector3 deskPos = new Vector3(-15.9700003f, -2.0999999f, -9.10000038f);
+        float step = speed * Time.deltaTime;
+        if (npc.transform.position.x != deskPos.x)
+            {
+            npc.GetComponent<SpriteRenderer>().flipX = false;
+            pos = Vector2.MoveTowards(npc.transform.position, deskPos, step);
+            npc.transform.position = new Vector3(pos.x, npc.transform.position.y, npc.transform.position.z);
+            if (deskPos.x - npc.transform.position.x < 0.1f)
+            {
+                walkToStop(rnd + 1);
+                speed = 0;
+                npc_moveright = false;
+            }
+
+
+
+        }
+       
+
+    }
+    
+    private void moveNpcLeft()
+    {
+        Vector3 pos;
+        Vector3 deskPos = new Vector3(-21.6800003f, -2.0999999f, -9.10000038f);
+        float step = 5 * Time.deltaTime;
+        if (npc.transform.position.x != deskPos.x)
+            {
+            npc.GetComponent<SpriteRenderer>().flipX = true;
+            pos = Vector2.MoveTowards(npc.transform.position, deskPos, step);
+            npc.transform.position = new Vector3(pos.x, npc.transform.position.y, npc.transform.position.z);
+            if (npc.transform.position.x - deskPos.x < 0.1f)
+            {
+                walkToStop(rnd + 1);
+                speed = 0;
+                movEnd = true;
+                npc_moveleft = false;
+            }
+        }
+        else
+        {
+
+        }
+        
     }
 }
